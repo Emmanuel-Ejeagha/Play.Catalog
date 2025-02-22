@@ -35,3 +35,9 @@
 /home/emma/Desktop/PROJECTS/Play.Catalog/src/Play.Catalog.Service/obj/Debug/net8.0/Play.Catalog.Service.pdb
 /home/emma/Desktop/PROJECTS/Play.Catalog/src/Play.Catalog.Service/obj/Debug/net8.0/Play.Catalog.Service.genruntimeconfig.cache
 /home/emma/Desktop/PROJECTS/Play.Catalog/src/Play.Catalog.Service/obj/Debug/net8.0/ref/Play.Catalog.Service.dll
+/home/emma/Desktop/PROJECTS/Play.Catalog/src/Play.Catalog.Service/bin/Debug/net8.0/DnsClient.dll
+/home/emma/Desktop/PROJECTS/Play.Catalog/src/Play.Catalog.Service/bin/Debug/net8.0/MongoDB.Bson.dll
+/home/emma/Desktop/PROJECTS/Play.Catalog/src/Play.Catalog.Service/bin/Debug/net8.0/MongoDB.Driver.dll
+/home/emma/Desktop/PROJECTS/Play.Catalog/src/Play.Catalog.Service/bin/Debug/net8.0/SharpCompress.dll
+/home/emma/Desktop/PROJECTS/Play.Catalog/src/Play.Catalog.Service/bin/Debug/net8.0/Snappier.dll
+/home/emma/Desktop/PROJECTS/Play.Catalog/src/Play.Catalog.Service/bin/Debug/net8.0/ZstdSharp.dll

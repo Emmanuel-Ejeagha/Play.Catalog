@@ -1,22 +1,34 @@
+using Microsoft.AspNetCore.Mvc.ModelBinding.Binders;
 using Microsoft.Extensions.Options;
-using MongoDB.Bson;
-using MongoDB.Bson.Serialization;
-using MongoDB.Bson.Serialization.Serializers;
+using MongoDB.Driver;
+using Play.Catalog.Service.Repositories;
+using Play.Catalog.Service.Settings;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Register BSON serializers
-BsonSerializer.RegisterSerializer(new GuidSerializer(BsonType.String));
-BsonSerializer.RegisterSerializer(new DateTimeOffsetSerializer(BsonType.String));
-
 // Add services to the container.
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddControllers(Options =>
-    {
-        Options.SuppressAsyncSuffixInActionNames = false;
-    });
+builder.Services.AddControllers(options =>
+{
+    options.SuppressAsyncSuffixInActionNames = false;
+});
+
+// Bind configuration settings
+builder.Services.Configure<ServiceSettings>(builder.Configuration.GetSection(nameof(ServiceSettings)));
+builder.Services.Configure<MongoDbSettings>(builder.Configuration.GetSection(nameof(MongoDbSettings)));
+
+// Register MongoDB client and database
+builder.Services.AddSingleton(serviceProvider =>
+{
+    var mongoDbSettings = serviceProvider.GetRequiredService<IOptions<MongoDbSettings>>().Value;
+    var serviceSettings = serviceProvider.GetRequiredService<IOptions<ServiceSettings>>().Value;
+
+    var mongoClient = new MongoClient(mongoDbSettings.ConnectionString);
+    return mongoClient.GetDatabase(serviceSettings.ServiceName);
+});
+
+builder.Services.AddSingleton<IItemsRepository, ItemsRepository>();
 
 var app = builder.Build();
 
@@ -25,34 +37,10 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
-    app.MapControllers();
 }
 
 app.UseHttpsRedirection();
-
-var summaries = new[]
-{
-    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-};
-
-app.MapGet("/weatherforecast", () =>
-{
-    var forecast = Enumerable.Range(1, 5).Select(index =>
-        new WeatherForecast
-        (
-            DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-            Random.Shared.Next(-20, 55),
-            summaries[Random.Shared.Next(summaries.Length)]
-        ))
-        .ToArray();
-    return forecast;
-})
-.WithName("GetWeatherForecast")
-.WithOpenApi();
+app.UseAuthorization();
+app.MapControllers();
 
 app.Run();
-
-record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
-{
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-}

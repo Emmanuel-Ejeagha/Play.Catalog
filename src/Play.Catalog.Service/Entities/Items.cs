@@ -1,10 +1,11 @@
 using System;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
+using Play.Common;
 
 namespace Play.Catalog.Service.Entities
 {
-    public class Items
+    public class Items : IEntity
     {
         [BsonId]
         [BsonRepresentation(BsonType.String)] // Converts Guid to a string in MongoDB

@@ -22,6 +22,7 @@
         "sources": {
           "/home/emma/.nuget/packages": {},
           "/home/emma/.nuget/packages/": {},
+          "/home/emma/.nuget/packages/": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -50,9 +51,9 @@
               "target": "Package",
               "version": "[8.0.13, )"
             },
-            "MongoDB.Driver": {
+            "Play.Common": {
               "target": "Package",
-              "version": "[3.2.1, )"
+              "version": "[1.0.2, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",

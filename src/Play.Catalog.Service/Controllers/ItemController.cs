@@ -2,7 +2,7 @@ using System.ComponentModel;
 using Microsoft.AspNetCore.Mvc;
 using Play.Catalog.Service.Dtos;
 using Play.Catalog.Service.Entities;
-using Play.Catalog.Service.Repositories;
+using Play.Common;
 
 namespace Play.Catalog.Service.Controllers
 {
@@ -10,9 +10,9 @@ namespace Play.Catalog.Service.Controllers
     [Route("api/[Controller]")]
     public class ItemsController : ControllerBase
     {
-        private readonly IItemsRepository itemsRepository;
+        private readonly IRepository<Items> itemsRepository;
 
-        public ItemsController(IItemsRepository itemsRepository)
+        public ItemsController(IRepository<Items> itemsRepository)
         {
             this.itemsRepository = itemsRepository;
         }
@@ -70,7 +70,7 @@ namespace Play.Catalog.Service.Controllers
             existingItem.Description = updateItemDto.Description;
             existingItem.Price = updateItemDto.Price;
 
-            await itemsRepository.UpdateAsyn(existingItem);
+            await itemsRepository.UpdateAsync(existingItem);
 
             return NoContent();
         }

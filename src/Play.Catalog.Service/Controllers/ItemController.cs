@@ -1,4 +1,5 @@
 using System.ComponentModel;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Play.Catalog.Service.Dtos;
 using Play.Catalog.Service.Entities;
@@ -7,10 +8,11 @@ using Play.Common;
 namespace Play.Catalog.Service.Controllers
 {
     [ApiController]
-    [Route("api/[Controller]")]
+    [Route("api/items")]
     public class ItemsController : ControllerBase
     {
         private readonly IRepository<Items> itemsRepository;
+        private static int requestCounter = 0;
 
         public ItemsController(IRepository<Items> itemsRepository)
         {
@@ -20,11 +22,28 @@ namespace Play.Catalog.Service.Controllers
 
         // 
         [HttpGet]
-        public async Task<IEnumerable<ItemsDto>> GetAsync()
+        public async Task<ActionResult<IEnumerable<ItemsDto>>> GetAsync()
         {
+            requestCounter++;
+            Console.WriteLine($"Request {requestCounter}: Starting..");
+
+            if (requestCounter <= 2)
+            {
+                Console.WriteLine($"Request {requestCounter}: Delaying...");
+                await Task.Delay(TimeSpan.FromSeconds(10));
+            }
+
+            if (requestCounter <= 4)
+            {
+                Console.WriteLine($"Request {requestCounter}: 500 (Internal Server Error).");
+                return StatusCode(500);
+            }
+
             var items = (await itemsRepository.GetAllAsync())
                         .Select(items => items.AsDto());
-            return items;
+
+            Console.WriteLine($"Request {requestCounter}: 200 (OK).");
+            return Ok(items);
         }
 
         // GET /api/items

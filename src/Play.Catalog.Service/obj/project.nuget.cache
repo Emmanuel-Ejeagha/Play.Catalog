@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ECJ32wOvhEM=",
+  "dgSpecHash": "oekxUiNwpMg=",
   "success": true,
   "projectFilePath": "/home/emma/Desktop/PROJECTS/Play.Catalog/src/Play.Catalog.Service/Play.Catalog.Service.csproj",
   "expectedPackageFiles": [
@@ -120,7 +120,8 @@
     "/home/emma/.nuget/packages/system.threading.timer/4.3.0/system.threading.timer.4.3.0.nupkg.sha512",
     "/home/emma/.nuget/packages/system.valuetuple/4.5.0/system.valuetuple.4.5.0.nupkg.sha512",
     "/home/emma/.nuget/packages/system.xml.readerwriter/4.3.1/system.xml.readerwriter.4.3.1.nupkg.sha512",
-    "/home/emma/.nuget/packages/system.xml.xdocument/4.3.0/system.xml.xdocument.4.3.0.nupkg.sha512"
+    "/home/emma/.nuget/packages/system.xml.xdocument/4.3.0/system.xml.xdocument.4.3.0.nupkg.sha512",
+    "/home/emma/.nuget/packages/play.catalog.contracts/1.0.0/play.catalog.contracts.1.0.0.nupkg.sha512"
   ],
   "logs": []
 }

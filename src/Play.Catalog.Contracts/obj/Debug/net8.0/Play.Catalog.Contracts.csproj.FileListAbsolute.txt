@@ -1,0 +1,12 @@
+/home/emma/Desktop/PROJECTS/Play.Catalog/src/Play.Catalog.Contracts/bin/Debug/net8.0/Play.Catalog.Contracts.deps.json
+/home/emma/Desktop/PROJECTS/Play.Catalog/src/Play.Catalog.Contracts/bin/Debug/net8.0/Play.Catalog.Contracts.dll
+/home/emma/Desktop/PROJECTS/Play.Catalog/src/Play.Catalog.Contracts/bin/Debug/net8.0/Play.Catalog.Contracts.pdb
+/home/emma/Desktop/PROJECTS/Play.Catalog/src/Play.Catalog.Contracts/obj/Debug/net8.0/Play.Catalog.Contracts.GeneratedMSBuildEditorConfig.editorconfig
+/home/emma/Desktop/PROJECTS/Play.Catalog/src/Play.Catalog.Contracts/obj/Debug/net8.0/Play.Catalog.Contracts.AssemblyInfoInputs.cache
+/home/emma/Desktop/PROJECTS/Play.Catalog/src/Play.Catalog.Contracts/obj/Debug/net8.0/Play.Catalog.Contracts.AssemblyInfo.cs
+/home/emma/Desktop/PROJECTS/Play.Catalog/src/Play.Catalog.Contracts/obj/Debug/net8.0/Play.Catalog.Contracts.csproj.CoreCompileInputs.cache
+/home/emma/Desktop/PROJECTS/Play.Catalog/src/Play.Catalog.Contracts/obj/Debug/net8.0/Play.Catalog.Contracts.sourcelink.json
+/home/emma/Desktop/PROJECTS/Play.Catalog/src/Play.Catalog.Contracts/obj/Debug/net8.0/Play.Catalog.Contracts.dll
+/home/emma/Desktop/PROJECTS/Play.Catalog/src/Play.Catalog.Contracts/obj/Debug/net8.0/refint/Play.Catalog.Contracts.dll
+/home/emma/Desktop/PROJECTS/Play.Catalog/src/Play.Catalog.Contracts/obj/Debug/net8.0/Play.Catalog.Contracts.pdb
+/home/emma/Desktop/PROJECTS/Play.Catalog/src/Play.Catalog.Contracts/obj/Debug/net8.0/ref/Play.Catalog.Contracts.dll

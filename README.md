@@ -1,7 +1,4 @@
-## **Catalog Service - README.md**
-
-````md
-# Catalog Service
+# Catalog MicroService
 
 ## Overview
 
@@ -13,9 +10,20 @@ The **Catalog Service** is a microservice responsible for managing product listi
 - ASP.NET Core Web API
 - MongoDB (Database)
 - Docker (Containerization)
-- Kubernetes (Orchestration) _(if applicable)_
-- RabbitMQ _(if used for messaging)_
+- RabbitMQ _(for messaging)_
 - Swagger (API Documentation)
+
+## MicroService and pkgs
+
+- Play.Catalog: https://github.com/Emmanuel-Ejeagha/Play.Catalog
+
+- Play.Inventory: https://github.com/Emmanuel-Ejeagha/Play.Inventory
+
+- Play.Common: https://github.com/Emmanuel-Ejeagha/Play.Common
+
+- packages:
+  Play.common nuget pkgs: https://github.com/Emmanuel-Ejeagha/packages
+- Play.Infra: https://github.com/Emmanuel-Ejeagha/Play.Infra
 
 ## Features
 
@@ -34,16 +42,23 @@ The **Catalog Service** is a microservice responsible for managing product listi
 ### Clone the Repository
 
 ```sh
-git clone https://github.com/yourusername/catalog-service.git
-cd catalog-service
+Clone all the repos in one dir
+Press F5 Key to enter debug mode
+or
+navigate to the dotnet of each repo and run:
+dotnet run
+Goto Play.Infra and run
+docker-compose up -d
+to start Docker container
 ```
+
 ````
 
 ### Run the Service Locally
 
 ```sh
 dotnet run
-```
+````
 
 ### Run with Docker
 
